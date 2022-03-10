@@ -3,6 +3,8 @@ name := "invoker"
 
 version := "0.1"
 
+
+lazy val akkaVersion = "2.6.15"
 val scalaV = "2.12.2"
 val scalaCheckV = "1.13.5"
 val scalaTestV = "3.0.0"
@@ -18,7 +20,7 @@ lazy val invoker = project
         "org.scalacheck" %% "scalacheck" % scalaCheckV % Test,
         "org.scalatest" %% "scalatest" % scalaTestV % Test,
         "org.mockito" % "mockito-core" % mockitoV % Test,
-
+        "com.typesafe.akka" %% "akka-stream" % akkaVersion,
         "org.scala-lang" % "scala-reflect" % scalaV
       )
     })
