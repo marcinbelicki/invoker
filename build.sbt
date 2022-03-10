@@ -3,7 +3,6 @@ name := "invoker"
 
 version := "0.1"
 
-
 lazy val akkaVersion = "2.6.15"
 val scalaV = "2.12.2"
 val scalaCheckV = "1.13.5"

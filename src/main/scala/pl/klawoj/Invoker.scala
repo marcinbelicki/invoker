@@ -8,11 +8,9 @@ import scala.concurrent.duration.Duration
 
 trait Invoker extends TaskQueue with ExpensiveService {
 
-
   implicit val system: ActorSystem = ActorSystem("Invoker")
 
   def delegateTasks(): Unit = {
-
 
     val executingTasks = Source(queue.toList)
       .groupBy(Integer.MAX_VALUE, _.deviceId)
@@ -20,7 +18,6 @@ trait Invoker extends TaskQueue with ExpensiveService {
       .mergeSubstreams
       .toMat(Sink.ignore)(Keep.right)
       .run
-
 
     Await.result(executingTasks,Duration.Inf)
   }
